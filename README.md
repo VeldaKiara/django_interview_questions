@@ -11,8 +11,10 @@
 |Bootstrapping-tool |	Built-it|	Not available | 
 <br>
 Nb: Batteries are libraries and tools that are required for common use cases and ORM is the object relational mapping layer which is used to interact with other relational databases.<br>
+
 2. What is  Django ?<br>
 Django is a Python-based free and open-source web framework that follows the model-template-view architectural pattern.It was also named after Django Reinhardt who was a jazz guitarist from the 1930s.<br>
+
 3. Which commpanies use Django ?<br>
 Pinterest, Instagram, Coursera, Udemy, Spotify, Youtube, Bitbucket, Mozilla,Eventbrite, Dropbox [others](https://stackshare.io/django)
 

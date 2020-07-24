@@ -1,5 +1,6 @@
 # django_interview_questions
 1. Difference between Flask and Django<br>
+
 | Comparison Factor     | Django    | Flask   |
 | :------------- | :----------: | :----------- |
 |  Project Type | Supports Large Projects| Built for smaller projects |

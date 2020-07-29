@@ -132,6 +132,10 @@ Some of the signals are as follows:
 | django.core.signals.request_started  django.core.signals.request_finished | Sent when Django starts or finishes an HTTP request.|
 <br>
 
+[Signals](https://docs.djangoproject.com/en/3.0/topics/signals/)
+
+<br>
+
 #### Briefly explain Django Field Class.
 ‘Field’ is basically an abstract class that actually represents a column in the database table. <br>
 The Field class, is in turn, a subclass of  RegisterLookupMixin. In Django, these fields are used to create database tables (db_type()) which are used to map Python types to the database using ```get_prep_value()``` and vice versa using ```from_db_value()``` method. Therefore, fields are fundamental pieces in different Django APIs such as models and querysets.

@@ -69,6 +69,14 @@ django-admin is the command-line utility of Django for administrative tasks. Usi
 | Sending a test email in order to confirm the email sending through Django is working | django-admin sendtestemail |
 | To start the Python interactive interpreter | django-admin shell |
 | To show all the migrations in your project | django-admin showmigrations |
+<br>
+
+#### How do you connect your django project to the database?
+Django comes with a default database which is SQLite. <br>
+To connect your project to this database, use the following commands:<br>
+```python manage.py migrate ``` (migrate command looks at the INSTALLED_APPS settings and creates database tables accordingly) <br>
+```python manage.py makemigrations``` (tells Django you have created/ changed your models)<br>
+```python manage.py sqlmigrate <name of the app followed by the generated id>``` (sqlmigrate takes the migration names and returns their SQL)<br>
 
 
 

@@ -78,6 +78,17 @@ To connect your project to this database, use the following commands:<br>
 ```python manage.py makemigrations``` (tells Django you have created/ changed your models)<br>
 ```python manage.py sqlmigrate <name of the app followed by the generated id>``` (sqlmigrate takes the migration names and returns their SQL)<br>
 
+#### What are the various files that are created when you create a Django Project? Explain briefly.
+After you create a project using the startproject command, the following files will be created: <br>
+| File Name  | Description |
+| :------------- | :---------- |
+| manage.py | A command-line utility that allows you to interact with your Django project |
+| __init__.py | An empty file that tells Python that the current directory should be considered as a Python package |
+| settings.py | Consists of the settings for the current project |
+| urls.py | Contains the URL’s for the current project |
+| wsgi.py | This is an entry-point for the web servers to serve the project you have created |
+
+
 
 
 

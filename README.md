@@ -150,6 +150,67 @@ Mixin is a type of multiple inheritance wherein you can combine behaviors and at
 Mixins provide an excellent way to reuse code from multiple classes. For example, generic class-based views consist of a mixin called TemplateResponseMixin whose purpose is to define ```render_to_response()``` method. When this is combined with a class present in the View, the result will be a TemplateView class.<br>
 One drawback of using these mixins is that it becomes difficult to analyze what a child class is doing and which methods to override in case of its code being too scattered between multiple classes.
 
+#### What are sessions?
+The session framework lets you store and retrieve arbitrary data on a per-site-visitor basis. It stores data on the server side and abstracts the sending and receiving of cookies. Cookies contain a session ID – not the data itself unless you’re using the cookie based backend.
+
+#### What do you mean by context?
+When you use a Django Template, it is compiled once (and only once) and stored for future use, as an optimization. A template can have variable names in double curly braces, such as {{ myvar1 }} and {{ myvar2 }}.<br>
+A Context is a dictionary with variable names as the key and their values as the value. Hence, if your context for the above template looks like: {myvar1: 101, myvar2: 102}, when you pass this context to the template render method, {{ myvar1 }} would be replaced with 101 and {{ myvar2 }} with 102 in your template. This is a simplistic example, but really a Context object is the context in which the template is being rendered.<br>
+As for a ContextProcessor, that is a slightly advanced concept. You can have in your settings.py file listed a few Context Processors which take in an HttpRequest object and return a dictionary (similar to the Context object above). The dictionary (context) returned by the Context Processor is merged into the context passed in by you (the user) by Django.<br>
+A use case for a Context Processor is when you always want to insert certain variables inside your template (for example the location of the user could be a candidate). Instead of writing code to insert it in each view, you could simply write a context processor for it and add it to the TEMPLATE_CONTEXT_PROCESSORS settings in settings.py.<br>
+
+#### When can you use iterators in Django ORM?
+Iterators in Python are basically containers that consist of a countable number of elements.<br>
+Any object that is an iterator implements two methods which are, the __init__() and the __next__()  methods. <br>
+When you are making use of iterators in Django, the best situation to do it, is when you have to process results that will require a large amount of memory space. <br>
+To do this, you can make use of the iterator() method which evaluates a QuerySet and returns the corresponding iterator over the results.<br>
+
+#### Explain the caching strategies of Django?
+Caching basically means to save the output of an expensive calculation in order to avoid performing the same calculation again.<br>
+Django provides a robust cache system which in turn helps you save dynamic web pages so that they don’t have to be evaluated over and over again for each request.<br>
+Some of the caching strategies of Django are listed below:<br>
+| Strategy 	| Description |
+| :-------- | :------- |
+| Memcached | Memory-based cache server which is the fastest and most efficient|
+|Filesystem caching | Cache values are stored as separate files in a serialized order |
+| Local-memory caching | This is actually the default cache in case you have not specified any other. This type of cache is per-process and thread-safe as well |
+| Database caching | Cache data will be stored in the database and works very well if you have a fast and well-indexed database server|
+<br>
+
+#### Explain the use of Middlewares in Django?
+Middleware is a framework that is light and low-level plugin system for altering Django’s input and output globally. <br>
+It's a framework of hooks into the request/ response processing of Django. <br>
+Each component in middleware has some particular task. For example, the AuthenticationMiddleware is used to associate users with requests using sessions. Django provides many other middlewares such as cache middleware to enable site-wide cache, common middleware that performs many tasks such as forbidding access to user agents, URL rewriting, etc, GZip middleware which is used to compress the content for browsers, etc.<br>
+
+#### What is the significance of manage.py file in Django?
+The manage.py file is automatically generated whenever you create a project.<br>
+This is basically a command-line utility that helps you to interact with your Django project in various ways. <br>
+It does the same things as django-admin but along with that, it also sets the DJANGO_SETTINGS_MODULE environment variable in order to point to your project’s settings. Usually, it is better to make use of manage.py rather than the django-admin in case you are working on a single project.<br>
+
+#### Explain the use of ‘migrate’ command in Django?
+In Django, migrations are used to propagate changes made to the models.The migrate command is basically used to apply or unapply migrations changes made to the models.<br>
+This command synchronizes the current set of models and migrations with the database state. You can use this command with or without parameters. In case you do not specify any parameter, all apps will have all their migrations running.<br>
+
+#### How to view and filter items from the database?
+In order to view all the items from your database, you can make use of the ‘all()’ function in your interactive shell as follows:
+```XYZ.objects.all()```    where XYZ is some class that you have created in your models.<br>
+To filter out some element from your database, you either use the get() method or the filter method as follows:<br>
+```XYZ.objects.filter(pk=1)```
+```XYZ.objects.get(id=1)```
+
+#### Explain how a request is processed in Django?
+In case a user requests a page from some Django powered site, the system follows an algorithm that determines which Python code needs to be executed.<br>
+Here are the steps that sum up the algorithm:<br>
+-Django first determines which root URLconf or URL configuration module is to be used<br>
+-Then, that particular Python module is loaded and then Django looks for the variable urlpatterns<br>
+-These URL patterns are then run by Django, and it stops at the first match of the requested URL<br>
+-Once that is done, the Django then imports and calls the given view<br>
+-In case none of the URLs match the requested URL, Django invokes an error-handling view<br>
+
+#### How did Django come into existence?
+Django basically grew from a very practical need. World Online developers namely Adrian Holovaty and Simon Willison started using Python to develop its websites. As they went on building intensive, richly interactive sites, they began to pull out a generic Web development framework that allowed them to build Web applications more and more quickly. In summer 2005, World Online decided to open-source the resulting software, which is, Django.
+
+
 
 
 

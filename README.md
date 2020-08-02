@@ -208,7 +208,32 @@ Here are the steps that sum up the algorithm:<br>
 -In case none of the URLs match the requested URL, Django invokes an error-handling view<br>
 
 #### How did Django come into existence?
-Django basically grew from a very practical need. World Online developers namely Adrian Holovaty and Simon Willison started using Python to develop its websites. As they went on building intensive, richly interactive sites, they began to pull out a generic Web development framework that allowed them to build Web applications more and more quickly. In summer 2005, World Online decided to open-source the resulting software, which is, Django.
+Django basically grew from a very practical need. World Online developers namely Adrian Holovaty and Simon Willison started using Python to develop its websites. As they went on building intensive, richly interactive sites, they began to pull out a generic Web development framework that allowed them to build Web applications more and more quickly. In summer 2005, World Online decided to open-source the resulting software, which is, Django.<br>
+
+#### How to use file-based sessions?
+In order to make use of file-based sessions, you will need to set the SESSION_ENGINE setting to “django.contrib.sessions.backends.file”.<br>
+
+#### Explain the Django URLs in brief?
+Django allows you to design your own URLs however you like. The aim is to maintain a clean URL scheme without any framework limitations.<br>
+In order to create URLs for your app, you will need to create a Python module informally called the URLconf or URL configuration which is pure Python code and is also a mapping between the URL path expressions to the Python methods.<br>
+The length of this mapping can be as long or short as required and can also reference other mappings.<br>
+When processing a request, the requested URL is matched with the URLs present in the urls.py file and the corresponding view is retrieved.<br>
+
+#### Give the exception classes present in Django?
+Django uses its own exceptions as well as those present in Python. Django core exceptions are present in django.core.exceptions class some of which are mentioned in the below:
+| Exception 	| Description |
+| :-------- | :------- |
+| AppRegistryNotReady | Raised when you try to use your models before the app loading process (initializes the ORM) is completed.|
+| ObjectDoesNotExist | This is the base class for DoesNotExist exceptions|
+| EmptyResultSet | This exception may be raised if a query won’t return any result |
+| MultipleObjectsReturned | This is raised by a query if multiple objects are returned and only one object was expected |
+| FieldDoesNotExist | This exception is raised by a model’s <_meta.get_field()> function in case the requested field does not exist|
+<br>
+
+
+
+
+
 
 
 
